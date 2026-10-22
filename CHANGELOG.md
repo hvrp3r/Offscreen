@@ -11,3 +11,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Architecture documentation and decision records, in English and French.
 - Technical reference for the data model, media library, playback, extensions, themes and control API.
 - Repository essentials: license, contribution guide, code of conduct.
+- Issue forms for bugs, features and tasks, and a pull request template.

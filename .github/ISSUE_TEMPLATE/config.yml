@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://github.com/hvrp3r/Offscreen/tree/main/docs
+    about: Architecture, decisions and technical reference.
+  - name: Contribution guide
+    url: https://github.com/hvrp3r/Offscreen/blob/main/CONTRIBUTING.md
+    about: How work is organized and how changes reach main.
