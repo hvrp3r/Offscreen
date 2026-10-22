@@ -30,9 +30,11 @@ extract() {
 }
 
 build() {
-  run "$IMAGE" mdbook build -d book
+  local site_url="${DOCS_SITE_URL:-/}"
+  run -e MDBOOK_OUTPUT__HTML__SITE_URL="$site_url" "$IMAGE" mdbook build -d book
   for lang in "${LANGUAGES[@]}"; do
-    run -e MDBOOK_BOOK__LANGUAGE="$lang" "$IMAGE" mdbook build -d "book/$lang"
+    run -e MDBOOK_BOOK__LANGUAGE="$lang" -e MDBOOK_OUTPUT__HTML__SITE_URL="$site_url$lang/" \
+      "$IMAGE" mdbook build -d "book/$lang"
   done
 }
 

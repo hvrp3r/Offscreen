@@ -32,6 +32,8 @@ The full layout planned for the project is described in [docs/technical/reposito
 
 ## Documentation
 
+The documentation is published at https://hvrp3r.github.io/Offscreen/, in English and French.
+
 Build every language and serve the documentation on http://localhost:3000:
 
 ```bash
