@@ -1,0 +1,53 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+TestResults/
+
+# Flutter and Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+coverage/
+
+# Android
+.gradle/
+local.properties
+*.jks
+*.keystore
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Extension packages
+*.offx
+
+# Media
+*.mkv
+*.mp4
+*.webm
+*.avi
+*.mov
+*.mp3
+*.flac
+*.ogg
+*.opus
+*.m4a
+*.wav
+samples/media/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editors and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
