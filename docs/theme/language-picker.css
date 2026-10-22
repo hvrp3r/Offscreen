@@ -1,0 +1,16 @@
+.language-picker {
+  margin-inline-end: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  font: inherit;
+  color: var(--icons);
+  background: var(--bg);
+  border: 1px solid var(--icons);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.language-picker:hover,
+.language-picker:focus-visible {
+  color: var(--icons-hover);
+  border-color: var(--icons-hover);
+}

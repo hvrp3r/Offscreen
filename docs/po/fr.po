@@ -1,0 +1,399 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Offscreen\n"
+"POT-Creation-Date: 2026-10-21T23:54:27Z\n"
+"PO-Revision-Date: 2026-10-21T22:24:14Z\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/SUMMARY.md:1
+msgid "Summary"
+msgstr "Sommaire"
+
+#: src/SUMMARY.md:3
+msgid "Introduction"
+msgstr "Introduction"
+
+#: src/SUMMARY.md:5 src/architecture.md:1
+msgid "Architecture"
+msgstr "Architecture"
+
+#: src/SUMMARY.md:7
+msgid "Overview"
+msgstr "Vue d'ensemble"
+
+#: src/SUMMARY.md:8 src/adr/index.md:1
+msgid "Decisions"
+msgstr "Décisions"
+
+#: src/SUMMARY.md:9 src/adr/0001-headless-core.md:1
+msgid "ADR-0001 Headless core"
+msgstr "ADR-0001 Core headless"
+
+#: src/SUMMARY.md:10 src/adr/0002-dotnet-core.md:1
+msgid "ADR-0002 C# / .NET core"
+msgstr "ADR-0002 Core en C# / .NET"
+
+#: src/SUMMARY.md:11 src/adr/0003-flutter-clients.md:1
+msgid "ADR-0003 Flutter clients"
+msgstr "ADR-0003 Clients Flutter"
+
+#: src/SUMMARY.md:12 src/adr/0004-wasm-extensions.md:1
+msgid "ADR-0004 WebAssembly extensions"
+msgstr "ADR-0004 Extensions WebAssembly"
+
+#: src/SUMMARY.md:13 src/adr/0005-network-protocols.md:1
+msgid "ADR-0005 Network protocols"
+msgstr "ADR-0005 Protocoles réseau"
+
+#: src/introduction.md:1
+msgid "Offscreen"
+msgstr "Offscreen"
+
+#: src/introduction.md:3
+msgid "Offscreen is a free and open source media center. It organizes local and network media, enriches it with metadata, plays it on a TV-friendly interface and is controlled from a phone."
+msgstr "Offscreen est un media center libre et open source. Il organise les médias locaux et réseau, les enrichit de métadonnées, les lit sur une interface pensée pour la télévision et se pilote depuis un téléphone."
+
+#: src/introduction.md:5
+msgid "This book describes its architecture and the decisions behind it."
+msgstr "Ce livre décrit son architecture et les décisions qui la justifient."
+
+#: src/architecture.md:3
+msgid "Components"
+msgstr "Composants"
+
+#: src/architecture.md:21
+msgid "Component"
+msgstr "Composant"
+
+#: src/architecture.md:21
+msgid "Role"
+msgstr "Rôle"
+
+#: src/architecture.md:23 src/architecture.md:43
+msgid "Core"
+msgstr "Core"
+
+#: src/architecture.md:23
+msgid "Headless service that owns the library, profiles, progress, extensions and paired devices."
+msgstr "Service headless qui détient la médiathèque, les profils, la progression, les extensions et les appareils appairés."
+
+#: src/architecture.md:24
+msgid "TV client"
+msgstr "Client TV"
+
+#: src/architecture.md:24
+msgid "Ten-foot interface and playback through libmpv. Ships with the core."
+msgstr "Interface pour écran de salon et lecture via libmpv. Livré avec le core."
+
+#: src/architecture.md:25
+msgid "Mobile remote"
+msgstr "Télécommande mobile"
+
+#: src/architecture.md:25
+msgid "Pairs with the core, controls playback and browses the library."
+msgstr "S'appaire au core, pilote la lecture et parcourt la médiathèque."
+
+#: src/architecture.md:26 src/architecture.md:45
+msgid "Extensions"
+msgstr "Extensions"
+
+#: src/architecture.md:26
+msgid "Packages loaded at runtime in a sandbox, limited to the permissions the user granted."
+msgstr "Paquets chargés à chaud dans une sandbox, limités aux permissions accordées par l'utilisateur."
+
+#: src/architecture.md:27
+msgid "Themes"
+msgstr "Thèmes"
+
+#: src/architecture.md:27
+msgid "Data packages switched without restart."
+msgstr "Paquets de données interchangeables sans redémarrage."
+
+#: src/architecture.md:29
+msgid "Data flows"
+msgstr "Flux de données"
+
+#: src/architecture.md:31
+msgid "**Scan and enrichment.** A source is listed, compared with the last snapshot, and only added, changed or removed files are processed. New files are recognized from their names and tags, then enriched by metadata providers. Results and images are cached so the library works offline."
+msgstr "**Scan et enrichissement.** Une source est listée et comparée au dernier instantané : seuls les fichiers ajoutés, modifiés ou supprimés sont traités. Les nouveaux fichiers sont reconnus à partir de leur nom et de leurs tags, puis enrichis par les fournisseurs de métadonnées. Les résultats et les images sont mis en cache, la médiathèque fonctionne donc hors ligne."
+
+#: src/architecture.md:33
+msgid "**Playback.** A client asks the core to play an item. The core checks parental control, finds the resume position and tells the TV client to play a stream URL served by the core. The TV client reports its state, and the core saves progress and broadcasts it to paired devices."
+msgstr "**Lecture.** Un client demande au core de lire un élément. Le core vérifie le contrôle parental, trouve la position de reprise et demande au client TV de lire une URL de streaming servie par le core. Le client TV remonte son état, et le core enregistre la progression et la diffuse aux appareils appairés."
+
+#: src/architecture.md:35
+msgid "**Remote control.** The phone finds the core through mDNS, pairs with a code shown on the TV, then sends commands over HTTP and receives live state over WebSocket."
+msgstr "**Pilotage à distance.** Le téléphone trouve le core via mDNS, s'appaire avec un code affiché sur la TV, puis envoie ses commandes en HTTP et reçoit l'état en temps réel par WebSocket."
+
+#: src/architecture.md:37
+msgid "**Extensions.** The core calls an extension inside its sandbox with a time and memory limit. Each call the extension makes back to the core is checked against its permissions. A failing extension is stopped without affecting the core."
+msgstr "**Extensions.** Le core appelle une extension dans sa sandbox avec une limite de temps et de mémoire. Chaque appel de l'extension vers le core est vérifié par rapport à ses permissions. Une extension défaillante est arrêtée sans affecter le core."
+
+#: src/architecture.md:39
+msgid "Stack"
+msgstr "Stack"
+
+#: src/architecture.md:41
+msgid "Part"
+msgstr "Brique"
+
+#: src/architecture.md:41
+msgid "Choice"
+msgstr "Choix"
+
+#: src/architecture.md:41
+msgid "Why"
+msgstr "Pourquoi"
+
+#: src/architecture.md:43
+msgid "C# / .NET"
+msgstr "C# / .NET"
+
+#: src/architecture.md:43
+msgid "Mature SMB and WebAssembly libraries, single binary for Linux and Windows. See [ADR-0002](adr/0002-dotnet-core.md)."
+msgstr "Bibliothèques SMB et WebAssembly matures, binaire unique pour Linux et Windows. Voir l'[ADR-0002](adr/0002-dotnet-core.md)."
+
+#: src/architecture.md:44
+msgid "Clients"
+msgstr "Clients"
+
+#: src/architecture.md:44
+msgid "Flutter, media_kit (libmpv)"
+msgstr "Flutter, media_kit (libmpv)"
+
+#: src/architecture.md:44
+msgid "One codebase for the TV client and the Android remote, real playback library. See [ADR-0003](adr/0003-flutter-clients.md)."
+msgstr "Une seule base de code pour le client TV et la télécommande Android, vraie bibliothèque de lecture. Voir l'[ADR-0003](adr/0003-flutter-clients.md)."
+
+#: src/architecture.md:45
+msgid "WebAssembly (Extism)"
+msgstr "WebAssembly (Extism)"
+
+#: src/architecture.md:45
+msgid "Strong isolation that maps directly to permissions. See [ADR-0004](adr/0004-wasm-extensions.md)."
+msgstr "Isolation forte, qui correspond directement aux permissions. Voir l'[ADR-0004](adr/0004-wasm-extensions.md)."
+
+#: src/architecture.md:46
+msgid "Storage"
+msgstr "Stockage"
+
+#: src/architecture.md:46
+msgid "SQLite"
+msgstr "SQLite"
+
+#: src/architecture.md:46
+msgid "Embedded, no server to install."
+msgstr "Embarqué, aucun serveur à installer."
+
+#: src/architecture.md:47
+msgid "Network shares"
+msgstr "Partages réseau"
+
+#: src/architecture.md:47
+msgid "SMB, then NFS and WebDAV"
+msgstr "SMB, puis NFS et WebDAV"
+
+#: src/architecture.md:47
+msgid "SMB covers most homes. NFS is suggested first when the host offers it. See [ADR-0005](adr/0005-network-protocols.md)."
+msgstr "SMB couvre la plupart des foyers. NFS est proposé en premier quand la machine le propose. Voir l'[ADR-0005](adr/0005-network-protocols.md)."
+
+#: src/adr/index.md:3
+msgid "Each architecture decision is recorded with its context, the options considered, the choice and its consequences."
+msgstr "Chaque décision d'architecture est consignée avec son contexte, les options étudiées, le choix retenu et ses conséquences."
+
+#: src/adr/index.md:5
+msgid "ADR"
+msgstr "ADR"
+
+#: src/adr/index.md:5
+msgid "Title"
+msgstr "Titre"
+
+#: src/adr/index.md:5
+msgid "Status"
+msgstr "Statut"
+
+#: src/adr/index.md:7
+msgid "[0001](0001-headless-core.md)"
+msgstr "[0001](0001-headless-core.md)"
+
+#: src/adr/index.md:7
+msgid "Headless core"
+msgstr "Core headless"
+
+#: src/adr/index.md:7 src/adr/index.md:8 src/adr/index.md:9 src/adr/index.md:10
+#: src/adr/index.md:11
+msgid "Accepted"
+msgstr "Acceptée"
+
+#: src/adr/index.md:8
+msgid "[0002](0002-dotnet-core.md)"
+msgstr "[0002](0002-dotnet-core.md)"
+
+#: src/adr/index.md:8
+msgid "C# / .NET core"
+msgstr "Core en C# / .NET"
+
+#: src/adr/index.md:9
+msgid "[0003](0003-flutter-clients.md)"
+msgstr "[0003](0003-flutter-clients.md)"
+
+#: src/adr/index.md:9
+msgid "Flutter clients"
+msgstr "Clients Flutter"
+
+#: src/adr/index.md:10
+msgid "[0004](0004-wasm-extensions.md)"
+msgstr "[0004](0004-wasm-extensions.md)"
+
+#: src/adr/index.md:10
+msgid "WebAssembly extensions"
+msgstr "Extensions WebAssembly"
+
+#: src/adr/index.md:11
+msgid "[0005](0005-network-protocols.md)"
+msgstr "[0005](0005-network-protocols.md)"
+
+#: src/adr/index.md:11
+msgid "Network protocols"
+msgstr "Protocoles réseau"
+
+#: src/adr/0001-headless-core.md:3
+msgid "**Context.** The media center runs on the TV computer and is controlled from a phone."
+msgstr "**Contexte.** Le media center tourne sur l'ordinateur relié à la TV et se pilote depuis un téléphone."
+
+#: src/adr/0001-headless-core.md:5 src/adr/0002-dotnet-core.md:5
+#: src/adr/0003-flutter-clients.md:5 src/adr/0004-wasm-extensions.md:5
+#: src/adr/0005-network-protocols.md:5
+msgid "**Options.**"
+msgstr "**Options.**"
+
+#: src/adr/0001-headless-core.md:6
+msgid "A desktop application that also exposes a control API."
+msgstr "Une application de bureau qui expose aussi une API de contrôle."
+
+#: src/adr/0001-headless-core.md:7
+msgid "A headless core owning all state, with clients that display and play."
+msgstr "Un core headless qui détient tout l'état, avec des clients qui affichent et lisent."
+
+#: src/adr/0001-headless-core.md:9
+msgid "**Decision.** A headless core. The TV client ships with it, so a single install is enough."
+msgstr "**Décision.** Un core headless. Le client TV est livré avec, une seule installation suffit donc."
+
+#: src/adr/0001-headless-core.md:11
+msgid "**Consequences.** Every feature goes through the API, which keeps the TV client and the remote consistent. Media is streamed by the core, so share credentials never leave it."
+msgstr "**Conséquences.** Chaque fonctionnalité passe par l'API, ce qui garde le client TV et la télécommande cohérents. Les médias sont diffusés par le core, les identifiants des partages ne le quittent donc jamais."
+
+#: src/adr/0002-dotnet-core.md:3
+msgid "**Context.** The core mostly does file and network I/O. What matters is library support for SMB, WebAssembly and mDNS, memory use, and single-binary deployment on Linux and Windows."
+msgstr "**Contexte.** Le core fait surtout des entrées/sorties fichiers et réseau. Ce qui compte : les bibliothèques SMB, WebAssembly et mDNS, la consommation mémoire, et le déploiement en un seul binaire sous Linux et Windows."
+
+#: src/adr/0002-dotnet-core.md:6
+msgid "Go: good network libraries, single static binary."
+msgstr "Go : bonnes bibliothèques réseau, binaire statique unique."
+
+#: src/adr/0002-dotnet-core.md:7
+msgid "Rust: best performance and memory use, young SMB libraries."
+msgstr "Rust : meilleures performances et consommation mémoire, bibliothèques SMB jeunes."
+
+#: src/adr/0002-dotnet-core.md:8
+msgid "TypeScript (Node): large ecosystem, weak SMB support, heavier runtime."
+msgstr "TypeScript (Node) : vaste écosystème, support SMB faible, runtime plus lourd."
+
+#: src/adr/0002-dotnet-core.md:9
+msgid "C# / .NET: most complete SMB client, supported Extism host, ahead-of-time compilation to a single binary."
+msgstr "C# / .NET : client SMB le plus complet, hôte Extism officiel, compilation anticipée en un seul binaire."
+
+#: src/adr/0002-dotnet-core.md:11
+msgid "**Decision.** C# on the current .NET LTS."
+msgstr "**Décision.** C# sur la version LTS actuelle de .NET."
+
+#: src/adr/0002-dotnet-core.md:13
+msgid "**Consequences.** Mature libraries for network shares and for the extension host. Some libraries may prevent ahead-of-time compilation, in which case the core runs on the JIT with higher memory use."
+msgstr "**Conséquences.** Des bibliothèques matures pour les partages réseau et pour l'hôte d'extensions. Certaines bibliothèques peuvent empêcher la compilation anticipée : le core tourne alors sur le JIT, avec une consommation mémoire plus élevée."
+
+#: src/adr/0003-flutter-clients.md:3
+msgid "**Context.** The TV client must run full screen on Linux and Windows and play through a real playback library. The remote must be a native Android app."
+msgstr "**Contexte.** Le client TV doit tourner en plein écran sous Linux et Windows et lire via une vraie bibliothèque de lecture. La télécommande doit être une application Android native."
+
+#: src/adr/0003-flutter-clients.md:6
+msgid "Qt/QML: excellent libmpv integration, no shared code with mobile."
+msgstr "Qt/QML : excellente intégration de libmpv, aucun code partagé avec le mobile."
+
+#: src/adr/0003-flutter-clients.md:7
+msgid "Tauri or Electron: web UI, libmpv only in a separate window."
+msgstr "Tauri ou Electron : interface web, libmpv uniquement dans une fenêtre séparée."
+
+#: src/adr/0003-flutter-clients.md:8
+msgid "Avalonia: C# everywhere, weaker mobile support."
+msgstr "Avalonia : C# partout, support mobile plus faible."
+
+#: src/adr/0003-flutter-clients.md:9
+msgid "Flutter: libmpv through media_kit, one codebase for desktop and Android."
+msgstr "Flutter : libmpv via media_kit, une seule base de code pour le bureau et Android."
+
+#: src/adr/0003-flutter-clients.md:11
+msgid "**Decision.** Flutter for both clients."
+msgstr "**Décision.** Flutter pour les deux clients."
+
+#: src/adr/0003-flutter-clients.md:13
+msgid "**Consequences.** One design system and one API client for every screen. Screen reader support on Linux must be checked early. The fallback is built-in speech output of the focused element."
+msgstr "**Conséquences.** Un seul design system et un seul client API pour tous les écrans. Le support du lecteur d'écran sous Linux doit être vérifié tôt. La solution de repli est la synthèse vocale intégrée de l'élément sélectionné."
+
+#: src/adr/0004-wasm-extensions.md:3
+msgid "**Context.** Extensions are untrusted. They must stay within their permissions, and a faulty extension must not crash the media center. The system must be built by the project."
+msgstr "**Contexte.** Les extensions ne sont pas fiables. Elles doivent rester dans leurs permissions, et une extension défaillante ne doit pas faire planter le media center. Le système doit être construit par le projet."
+
+#: src/adr/0004-wasm-extensions.md:6
+msgid "One process per extension: strong isolation, heavy, permissions rely on an existing runtime."
+msgstr "Un processus par extension : isolation forte, lourd, permissions reposant sur un runtime existant."
+
+#: src/adr/0004-wasm-extensions.md:7
+msgid "JavaScript isolates: light, JavaScript only, permissions to build from scratch."
+msgstr "Isolates JavaScript : léger, JavaScript uniquement, permissions à construire de zéro."
+
+#: src/adr/0004-wasm-extensions.md:8
+msgid "WebAssembly with Extism: strong isolation, light, any language that compiles to WebAssembly."
+msgstr "WebAssembly avec Extism : isolation forte, léger, tout langage compilable en WebAssembly."
+
+#: src/adr/0004-wasm-extensions.md:10
+msgid "**Decision.** WebAssembly with Extism, hosted by the core."
+msgstr "**Décision.** WebAssembly avec Extism, hébergé par le core."
+
+#: src/adr/0004-wasm-extensions.md:12
+msgid "**Consequences.** A permission that is not granted simply has no host function to call. Calls are bounded in time and memory. Extensions describe their widgets and settings as data, and the clients render them. Authors write TypeScript against the SDK and debug in a development mode that runs the extension in Node, connected to a real core."
+msgstr "**Conséquences.** Une permission non accordée n'a tout simplement aucune fonction de l'hôte à appeler. Les appels sont limités en temps et en mémoire. Les extensions décrivent leurs widgets et leurs réglages sous forme de données, et les clients les affichent. Les auteurs écrivent en TypeScript avec le SDK et déboguent dans un mode développement qui exécute l'extension dans Node, connectée à un vrai core."
+
+#: src/adr/0005-network-protocols.md:3
+msgid "**Context.** Media is often stored on a NAS, another computer or an internet box. No single protocol covers all this hardware, and network sources must accept credentials stored securely."
+msgstr "**Contexte.** Les médias sont souvent stockés sur un NAS, un autre ordinateur ou une box internet. Aucun protocole ne couvre à lui seul tout ce matériel, et les sources réseau doivent accepter des identifiants stockés de façon sécurisée."
+
+#: src/adr/0005-network-protocols.md:6
+msgid "SMB: Windows shares, internet boxes and most NAS, with credentials and discovery. Defined by Microsoft, with Samba as a free implementation."
+msgstr "SMB : partages Windows, box internet et la plupart des NAS, avec identifiants et découverte. Défini par Microsoft, avec Samba comme implémentation libre."
+
+#: src/adr/0005-network-protocols.md:7
+msgid "NFS: open standard, native on Linux and NAS. No user credentials in NFSv3, Linux servers expect a privileged client port by default, no mature C# library."
+msgstr "NFS : standard ouvert, natif sous Linux et sur les NAS. Pas d'identifiants utilisateur en NFSv3, les serveurs Linux attendent par défaut un port client privilégié, aucune bibliothèque C# mature."
+
+#: src/adr/0005-network-protocols.md:8
+msgid "WebDAV: open standard over HTTP, offered by NAS and Nextcloud, rare on internet boxes."
+msgstr "WebDAV : standard ouvert sur HTTP, proposé par les NAS et Nextcloud, rare sur les box internet."
+
+#: src/adr/0005-network-protocols.md:9
+msgid "DLNA/UPnP: automatic discovery on boxes and TVs, but the server decides how files are organized."
+msgstr "DLNA/UPnP : découverte automatique sur les box et les TV, mais c'est le serveur qui décide de l'organisation des fichiers."
+
+#: src/adr/0005-network-protocols.md:11
+msgid "**Decision.** Several protocols behind one source contract, built in this order: SMB, NFS, WebDAV. When the user adds a network source, the core probes the host and suggests NFS first when it is available, SMB otherwise. A source stays bound to the protocol chosen when it was added."
+msgstr "**Décision.** Plusieurs protocoles derrière un même contrat de source, développés dans cet ordre : SMB, NFS, WebDAV. Quand l'utilisateur ajoute une source réseau, le core teste la machine et propose NFS en premier s'il est disponible, sinon SMB. Une source reste liée au protocole choisi à son ajout."
+
+#: src/adr/0005-network-protocols.md:13
+msgid "**Consequences.** Most homes work from the first release. NFS needs a read-only NFSv3 client written in the project and, on Linux, permission to use a privileged port, granted at install. When an NFS connection is refused, the user is offered SMB with a clear message."
+msgstr "**Conséquences.** La plupart des foyers fonctionnent dès la première version. NFS demande un client NFSv3 en lecture seule développé dans le projet et, sous Linux, la permission d'utiliser un port privilégié, accordée à l'installation. Quand une connexion NFS est refusée, SMB est proposé à l'utilisateur avec un message clair."

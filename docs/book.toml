@@ -1,0 +1,14 @@
+[book]
+title = "Offscreen"
+authors = ["Offscreen contributors"]
+language = "en"
+src = "src"
+
+[preprocessor.gettext]
+after = ["links"]
+
+[output.html]
+git-repository-url = "https://github.com/hvrp3r/Offscreen"
+edit-url-template = "https://github.com/hvrp3r/Offscreen/edit/main/docs/{path}"
+additional-js = ["theme/language-picker.js"]
+additional-css = ["theme/language-picker.css"]
