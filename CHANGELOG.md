@@ -12,3 +12,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Technical reference for the data model, media library, playback, extensions, themes and control API.
 - Repository essentials: license, contribution guide, code of conduct.
 - Issue forms for bugs, features and tasks, and a pull request template.
+- Core service skeleton with a health endpoint, layered configuration and structured logging.
