@@ -18,6 +18,7 @@ Offscreen is a free and open source media center. It organizes your movies, seri
 
 | Folder | Content |
 |---|---|
+| [`core/`](core/) | Headless core service (.NET) |
 | [`docs/`](docs/) | Architecture book, technical reference and documentation tooling |
 | [`scripts/`](scripts/) | Development scripts |
 
@@ -28,7 +29,22 @@ The full layout planned for the project is described in [docs/technical/reposito
 | Tool | Used for |
 |---|---|
 | [Git](https://git-scm.com/) | Source control |
+| [.NET SDK 10](https://dotnet.microsoft.com/download/dotnet/10.0) | Building and running the core |
 | [Docker](https://www.docker.com/) | Building and previewing the documentation |
+
+## Running the core
+
+```bash
+dotnet run --project core/src/Offscreen.Host
+```
+
+The core listens on port 8420. Check that it runs with http://localhost:8420/api/v1/health. Settings can be overridden with environment variables or a `.env` file, as described in [.env.example](.env.example).
+
+## Tests
+
+```bash
+dotnet test core
+```
 
 ## Documentation
 

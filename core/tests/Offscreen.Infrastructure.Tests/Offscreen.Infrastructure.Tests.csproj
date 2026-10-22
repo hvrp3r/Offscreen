@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Offscreen.Infrastructure\Offscreen.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

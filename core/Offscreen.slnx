@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Offscreen.Api/Offscreen.Api.csproj" />
+    <Project Path="src/Offscreen.Application/Offscreen.Application.csproj" />
+    <Project Path="src/Offscreen.Domain/Offscreen.Domain.csproj" />
+    <Project Path="src/Offscreen.Extensions/Offscreen.Extensions.csproj" />
+    <Project Path="src/Offscreen.Host/Offscreen.Host.csproj" />
+    <Project Path="src/Offscreen.Infrastructure/Offscreen.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Offscreen.Api.Tests/Offscreen.Api.Tests.csproj" />
+    <Project Path="tests/Offscreen.Infrastructure.Tests/Offscreen.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>
