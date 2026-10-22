@@ -1,0 +1,42 @@
+name: Feature request
+description: Suggest a new feature or an improvement.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do, and what gets in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: area
+    attributes:
+      label: Component
+      options:
+        - Core
+        - TV client
+        - Mobile app
+        - Extension
+        - Extension SDK
+        - Themes
+        - Documentation
+        - Repository and CI
+    validations:
+      required: true
+  - type: checkboxes
+    id: extension
+    attributes:
+      label: Scope
+      options:
+        - label: This could be built as an extension instead of a core change.
