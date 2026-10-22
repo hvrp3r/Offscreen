@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "appTitle": "Offscreen",
+  "@appTitle": {
+    "description": "Product name shown in window titles and the task switcher."
+  },
+  "welcome": "Your media center is ready.",
+  "@welcome": {
+    "description": "Placeholder home message until the home screen exists."
+  }
+}

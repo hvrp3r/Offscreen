@@ -18,6 +18,7 @@ Offscreen is a free and open source media center. It organizes your movies, seri
 
 | Folder | Content |
 |---|---|
+| [`clients/`](clients/) | Flutter workspace: TV client, mobile app and shared packages |
 | [`docs/`](docs/) | Architecture book, technical reference and documentation tooling |
 | [`scripts/`](scripts/) | Development scripts |
 
@@ -28,7 +29,23 @@ The full layout planned for the project is described in [docs/technical/reposito
 | Tool | Used for |
 |---|---|
 | [Git](https://git-scm.com/) | Source control |
+| [Flutter](https://docs.flutter.dev/get-started/install) (stable) | Building and running the clients |
 | [Docker](https://www.docker.com/) | Building and previewing the documentation |
+
+## Running the clients
+
+```bash
+cd clients/apps/tv
+flutter run -d windows
+```
+
+Use `-d linux` on Linux. Desktop builds need the platform toolchain listed by `flutter doctor`.
+
+```bash
+scripts/clients.sh test
+```
+
+Runs the tests of every app and package. `scripts/clients.sh analyze` and `scripts/clients.sh format --check` run the analyzer and the formatter.
 
 ## Documentation
 

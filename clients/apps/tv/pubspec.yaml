@@ -1,0 +1,21 @@
+name: offscreen_tv
+description: Offscreen living-room client.
+publish_to: none
+version: 0.1.0+1
+resolution: workspace
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  offscreen_l10n: any
+  offscreen_ui: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

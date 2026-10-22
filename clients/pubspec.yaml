@@ -1,0 +1,15 @@
+name: offscreen_clients
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+workspace:
+  - apps/tv
+  - apps/mobile
+  - packages/offscreen_l10n
+  - packages/offscreen_player
+  - packages/offscreen_ui
+
+dev_dependencies:
+  flutter_lints: ^6.0.0

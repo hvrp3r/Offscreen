@@ -51,3 +51,6 @@ samples/media/
 *.swp
 .DS_Store
 Thumbs.db
+
+# Generated localizations
+clients/packages/offscreen_l10n/lib/src/generated/

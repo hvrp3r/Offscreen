@@ -1,0 +1,16 @@
+name: offscreen_ui
+description: Offscreen design system, focus navigation and theme engine.
+publish_to: none
+version: 0.1.0
+resolution: workspace
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
