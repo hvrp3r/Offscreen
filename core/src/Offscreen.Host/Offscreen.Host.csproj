@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <PublishAot>true</PublishAot>
+    <AssemblyName>offscreen-core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Offscreen.Api\Offscreen.Api.csproj" />
+    <ProjectReference Include="..\Offscreen.Extensions\Offscreen.Extensions.csproj" />
+    <ProjectReference Include="..\Offscreen.Infrastructure\Offscreen.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
